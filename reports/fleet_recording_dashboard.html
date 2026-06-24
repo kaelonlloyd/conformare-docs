@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fleet dashboard - run recording</title>
+<style>
+ body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1f2328;
+      margin:0;padding:22px;background:#fff;font-size:14px}
+ h1{font-size:21px;margin:0 0 4px} h2{font-size:16px;margin:26px 0 8px}
+ .sub{color:#57606a;margin:0 0 8px}
+ table{border-collapse:collapse;width:100%;font-size:13px}
+ th,td{border:1px solid #d0d7de;padding:6px 9px;text-align:left;vertical-align:top}
+ th{background:#f6f8fa;font-weight:600} tr:nth-child(even) td{background:#fafbfc}
+ code{background:#f6f8fa;border-radius:5px;padding:0 4px;font-size:12px}
+ .hint{color:#8c959f} .empty{color:#8c959f;font-style:italic}
+ .note{background:#fff8c5;border:1px solid #d4a72c55;border-radius:8px;padding:8px 11px}
+</style></head><body>
+<h1>Fleet dashboard - run recording</h1>
+<p class="sub">2 run(s) across 1 pipeline(s).</p>
+
+<h2>Runs &amp; health</h2>
+<table><thead><tr><th>Pipeline</th><th>When</th><th>Status</th><th>Risks</th><th>GE failed</th><th>Sensitive written</th><th>Sinks</th><th>Env</th></tr></thead><tbody><tr><td><b>customer_scoring</b></td><td>2026-06-01T09:00:00Z</td><td><span style="background:#1a7f37;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">healthy</span></td><td>1/1 mitigated</td><td>0</td><td>0</td><td>0</td><td>prod</td></tr><tr><td><b>customer_scoring</b></td><td>2026-06-08T09:00:00Z</td><td><span style="background:#1a7f37;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">healthy</span></td><td>1/1 mitigated</td><td>0</td><td>0</td><td>0</td><td>prod</td></tr></tbody></table>
+
+<h2>Risks across the fleet</h2>
+<table><thead><tr><th>Pipeline</th><th>Severity</th><th>Risk</th><th>Mitigated</th><th>Owner(s)</th><th>Mitigation</th></tr></thead><tbody><tr><td>customer_scoring</td><td><span style="background:#cf222e;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">high</span></td><td><b>pii-in-features</b></td><td><span style="background:#1a7f37;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">yes</span></td><td>Alice</td><td>reviewed by DPO</td></tr><tr><td>customer_scoring</td><td><span style="background:#cf222e;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">high</span></td><td><b>pii-in-features</b></td><td><span style="background:#1a7f37;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">yes</span></td><td>Alice</td><td>reviewed by DPO</td></tr></tbody></table>
+
+<h2>Review needed &mdash; implementation vs risk</h2>
+<p class="note">1 context(s) where the <b>implementation changed but the risk assessment did not</b> &mdash; worth a review.</p>
+<table><thead><tr><th>Pipeline</th><th>Context</th><th>impl_hash</th><th>Risks (unchanged)</th><th>Between</th></tr></thead><tbody><tr><td>customer_scoring</td><td><b>Engineer features</b></td><td><code>331371a5674c0257</code> &rarr; <code>fded1f2c2eb49cb8</code></td><td>pii-in-features</td><td>2026-06-01T09:00:00Z &rarr; 2026-06-08T09:00:00Z</td></tr></tbody></table>
+
+<h2>Sinks carrying sensitive columns</h2>
+<p class="empty">none</p>
+
+
+</body></html>

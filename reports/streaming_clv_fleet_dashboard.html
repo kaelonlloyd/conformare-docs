@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Streaming CLV programme - fleet dashboard</title>
+<style>
+ body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1f2328;
+      margin:0;padding:22px;background:#fff;font-size:14px}
+ h1{font-size:21px;margin:0 0 4px} h2{font-size:16px;margin:26px 0 8px}
+ .sub{color:#57606a;margin:0 0 8px}
+ table{border-collapse:collapse;width:100%;font-size:13px}
+ th,td{border:1px solid #d0d7de;padding:6px 9px;text-align:left;vertical-align:top}
+ th{background:#f6f8fa;font-weight:600} tr:nth-child(even) td{background:#fafbfc}
+ code{background:#f6f8fa;border-radius:5px;padding:0 4px;font-size:12px}
+ .hint{color:#8c959f} .empty{color:#8c959f;font-style:italic}
+ .note{background:#fff8c5;border:1px solid #d4a72c55;border-radius:8px;padding:8px 11px}
+</style></head><body>
+<h1>Streaming CLV programme - fleet dashboard</h1>
+<p class="sub">2 run(s) across 2 pipeline(s).</p>
+
+<h2>Runs &amp; health</h2>
+<table><thead><tr><th>Pipeline</th><th>When</th><th>Status</th><th>Risks</th><th>GE failed</th><th>Sensitive written</th><th>Sinks</th><th>Env</th></tr></thead><tbody><tr><td><b>audience_reports</b></td><td>2026-06-24T23:31:01Z</td><td><span style="background:#bf8700;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">degraded</span></td><td>0/1 mitigated</td><td>0</td><td><span style="background:#cf222e;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">1</span></td><td>2</td><td>prod</td></tr><tr><td><b>value_model</b></td><td>2026-06-24T23:30:55Z</td><td><span style="background:#bf8700;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">degraded</span></td><td>1/2 mitigated</td><td>0</td><td>0</td><td>1</td><td>prod</td></tr></tbody></table>
+
+<h2>Risks across the fleet</h2>
+<table><thead><tr><th>Pipeline</th><th>Severity</th><th>Risk</th><th>Mitigated</th><th>Owner(s)</th><th>Mitigation</th></tr></thead><tbody><tr><td>audience_reports</td><td><span style="background:#cf222e;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">high</span></td><td><b>Customer names written to output</b></td><td><span style="background:#cf222e;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">no</span></td><td><span class="hint">unowned</span></td><td><span class="hint">none</span></td></tr><tr><td>value_model</td><td><span style="background:#bf8700;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">medium</span></td><td><b>Churn not modelled</b></td><td><span style="background:#cf222e;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">no</span></td><td><span class="hint">unowned</span></td><td><span class="hint">none</span></td></tr><tr><td>value_model</td><td><span style="background:#1a7f37;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">low</span></td><td><b>Forecast at national granularity</b></td><td><span style="background:#1a7f37;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">yes</span></td><td><span class="hint">unowned</span></td><td>add content-type features to the model</td></tr></tbody></table>
+
+<h2>Review needed &mdash; implementation vs risk</h2>
+<p class="empty">No implementation-vs-risk drift detected.</p>
+<p class="empty">none</p>
+
+<h2>Sinks carrying sensitive columns</h2>
+<table><thead><tr><th>Pipeline</th><th>Sink</th><th>Location</th><th># sensitive</th></tr></thead><tbody><tr><td>audience_reports</td><td>young_report</td><td>/home/runner/work/conformare/conformare/output/streaming_clv/young_report</td><td>1</td></tr><tr><td>audience_reports</td><td>old_report</td><td>/home/runner/work/conformare/conformare/output/streaming_clv/old_report</td><td>1</td></tr></tbody></table>
+
+<h2>Inherited risk on sourced tables</h2><p class="note">Sourcing these tables pulls in risk recorded upstream in the fleet (or declared statically). Mitigate or accept before relying on them.</p><table><thead><tr><th>Sourced table</th><th>Kind</th><th>Severity</th><th>Risk</th><th>Owner(s)</th><th>Seen in</th></tr></thead><tbody><tr><td>/home/runner/work/conformare/conformare/output/streaming_clv/clv_output</td><td><span style="background:#bf8700;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">indirect (distance 9)</span></td><td><span style="background:#bf8700;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">medium</span></td><td><b>Churn not modelled</b></td><td><span class="hint">unowned</span></td><td>value_model</td></tr><tr><td>/home/runner/work/conformare/conformare/output/streaming_clv/clv_output</td><td><span style="background:#1a7f37;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">indirect (distance 1)</span></td><td><span style="background:#1a7f37;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">low</span></td><td><b>Forecast at national granularity</b></td><td><span class="hint">unowned</span></td><td>value_model</td></tr><tr><td>lake.sales_channel</td><td><span style="background:#cf222e;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">static</span></td><td><span style="background:#cf222e;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px;white-space:nowrap">high</span></td><td><b>Sales-channel codes were remapped</b></td><td>Data Engineering</td><td>static</td></tr></tbody></table>
+</body></html>
